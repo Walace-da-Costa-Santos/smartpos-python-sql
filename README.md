@@ -1,43 +1,62 @@
-# 💳 SmartPOS — Sistema de Vendas com Python e SQL
+# 💳 SmartPOS — Python + SQL
 
-O SmartPOS é um projeto desenvolvido em Python para simular o funcionamento básico de uma maquininha de cartão e praticar conceitos de programação, banco de dados e análise de dados.
-
-O sistema permite registrar vendas, armazenar informações em um banco SQLite, consultar o histórico e gerar relatórios utilizando SQL.
+Projeto desenvolvido em **Python e SQLite** para simular uma maquininha de cartão e aplicar conceitos de programação, banco de dados e análise de vendas.
 
 ## 🚀 Funcionalidades
 
-- Pagamento no débito
-- Crédito à vista
-- Crédito parcelado de 2 a 12 vezes
-- Validação dos valores informados
-- Registro de data e hora das vendas
-- Armazenamento das vendas em SQLite
-- Consulta do histórico de vendas
-- Relatório geral
-- Relatório por forma de pagamento
-- Relatório diário
-- Relatório por data
-- Cálculo do faturamento
-- Cálculo do ticket médio
-- Identificação da maior e menor venda
-- Identificação da forma de pagamento mais utilizada
-- Assistente interativo baseado em regras e palavras-chave
+- Pagamentos simulados no débito, crédito à vista e parcelado
+- Registro das vendas em banco SQLite
+- Histórico de vendas
+- Relatórios por data e forma de pagamento
+- Faturamento total e ticket médio
+- Maior e menor venda
+- Forma de pagamento mais utilizada
+- Assistente interativo baseado em palavras-chave
 
 ## 🛠️ Tecnologias
 
 - Python
 - SQL
 - SQLite
+- Git e GitHub
 
-## 📁 Estrutura do projeto
+## 📁 Estrutura
 
-```text
-SmartPOS/
-│
+```text id="nqf8tc"
+smartpos-python-sql/
 ├── main.py
 ├── database.py
 ├── pagamentos.py
 ├── relatorios.py
-├── assistente.py
-├── .gitignore
-└── README.md
+└── assistente.py
+```
+
+O projeto foi dividido em módulos para separar as responsabilidades de banco de dados, pagamentos, relatórios e assistente.
+
+## ▶️ Executar
+
+Clone o repositório:
+
+```bash id="2n81jf"
+git clone https://github.com/Walace-da-Costa-Santos/smartpos-python-sql.git
+```
+
+Entre na pasta:
+
+```bash id="6z9ctw"
+cd smartpos-python-sql
+```
+
+Execute:
+
+```bash id="isxqf2"
+python main.py
+```
+
+O banco SQLite é criado automaticamente.
+
+## 📚 Conceitos praticados
+
+Funções, condicionais, loops, tratamento de exceções, modularização, persistência de dados e consultas SQL com `SELECT`, `WHERE`, `GROUP BY`, `ORDER BY`, `COUNT`, `SUM`, `AVG`, `MAX` e `MIN`.
+
+> Projeto educacional. Os pagamentos são apenas simulações e nenhum dado real de cartão é processado.
