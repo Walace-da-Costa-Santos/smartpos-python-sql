@@ -50,5 +50,3 @@ def gerar_analise_ia():
         return "O assistente de IA está temporariamente indisponível. Tente novamente mais tarde."
 
 
-print("\n===== SMARTPOS INSIGHTS =====")
-print(gerar_analise_ia())
