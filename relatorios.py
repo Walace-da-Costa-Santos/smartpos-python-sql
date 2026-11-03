@@ -228,3 +228,59 @@ def analise_vendas():
         print(f"Quantidade de utilizações: {pagamento[1]}")
 
     print("=======================================")
+
+def obter_resumo_vendas():
+    conexao = conectar_banco()
+    cursor = conexao.cursor()
+
+    cursor.execute("""
+        SELECT
+            COUNT(*),
+            SUM(valor),
+            AVG(valor)
+        FROM vendas
+    """)
+
+    resultado = cursor.fetchone()
+
+    conexao.close()
+
+    quantidade = resultado[0]
+    faturamento = resultado[1] or 0
+    ticket_medio = resultado[2] or 0
+
+    return {
+        "quantidade_vendas": quantidade,
+        "faturamento_total": faturamento,
+        "ticket_medio": ticket_medio
+    }
+def obter_pagamento_mais_usado():
+    conexao = conectar_banco()
+    cursor = conexao.cursor()
+
+    cursor.execute("""
+        SELECT
+            pagamento,
+            COUNT(*) AS quantidade
+        FROM vendas
+        GROUP BY pagamento
+        ORDER BY quantidade DESC
+        LIMIT 1
+    """)
+
+    resultado = cursor.fetchone()
+
+    conexao.close()
+
+    if resultado is None:
+        return {
+            "pagamento": None,
+            "quantidade": 0
+        }
+
+    return {
+        "pagamento": resultado[0],
+        "quantidade": resultado[1]
+    }
+
+

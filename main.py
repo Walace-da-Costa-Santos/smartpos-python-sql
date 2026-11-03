@@ -1,5 +1,5 @@
 from database import criar_tabela
-
+from assistente_ia import gerar_analise_ia
 from pagamentos import processar_pagamento
 
 from relatorios import (
@@ -10,8 +10,6 @@ from relatorios import (
     relatorio_por_data,
     analise_vendas
 )
-
-from assistente import assistente_inteligente
 
 
 def iniciar_maquininha():
@@ -28,7 +26,7 @@ def iniciar_maquininha():
         print("7 - Relatório de hoje")
         print("8 - Relatório por data")
         print("9 - Análise de vendas")
-        print("10 - Assistente interativo")
+        print("10 - SmartPOS Insights - Análise com IA")
         print("0 - Sair")
         print("==============================")
 
@@ -60,7 +58,13 @@ def iniciar_maquininha():
             analise_vendas()
 
         elif opcao == "10":
-            assistente_inteligente()
+            print("\n========== SMARTPOS INSIGHTS ==========")
+            print("Analisando suas vendas com IA...\n")
+
+            analise = gerar_analise_ia()
+
+            print(analise)
+            print("=======================================")
 
         else:
             print("Opção inválida! Tente novamente.")
